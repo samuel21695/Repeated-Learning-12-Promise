@@ -14,4 +14,13 @@ const handle = new Promise(function(resolve, reject) {
       resolve();
     }, 3000);
   })
+  .then(function() {
+    return new Promise(function(resolve, reject) {
+      setTimeout(function() {
+        console.log('두번째');
+        resolve();
+      }, 2000);
+    });
+  })
+  
 })
