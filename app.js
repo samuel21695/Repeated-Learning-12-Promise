@@ -22,5 +22,12 @@ const handle = new Promise(function(resolve, reject) {
       }, 2000);
     });
   })
-  
+  .then(function() {
+    return new Promise(function(resolve, reject) {
+      setTimeout(function() {
+        console.log('세번째');
+        resolve();
+      }, 1000);
+    });
+  });
 })
